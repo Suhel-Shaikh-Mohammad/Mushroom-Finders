@@ -1,0 +1,186 @@
+@layer reset, base, layout, utilities;
+
+@layer reset{
+    *,
+    *::before,
+    *::after {
+    box-sizing: border-box;
+    }
+
+    /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+    html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    figure,
+    blockquote,
+    dl,
+    dd {
+    margin: 0;
+    }
+
+    /* https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html */
+    [role="list"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+
+    body {
+    min-block-size: 100vh;
+    line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3,
+    button,
+    input,
+    label {
+    line-height: 1.1;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+    text-wrap: balance;
+    }
+
+    p,
+    li {
+    text-wrap: pretty;
+    }
+
+    img,
+    picture {
+    max-inline-size: 100%;
+    display: block;
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+    font: inherit;
+}
+}
+
+@layer base{
+    :root{
+        --brown-1:rgba(66, 61, 60, 100%);
+        --brown-2:rgba(56, 50, 49, 100%);
+        --brown-3:rgba(45, 39, 38, 100%);
+        --brown-4:rgba(41, 36, 36, 100%);
+        --brown-5:rgba(34, 30, 30, 100%);
+
+        --primary:rgba(245, 156, 92, 100%);
+        --primary-light:rgba(247, 182, 135, 100%);
+
+        --white:rgba(255, 255, 255, 100%);
+        --gray:rgba(203, 201, 201, 100%);
+
+        --accent-light:rgba(101, 148, 119, 100%);
+        --accent:rgba(59, 130, 86, 100%);
+        --accent-dark:rgba(35, 65, 47, 100%);
+
+        --red:rgba(126, 62, 63, 100%);
+        --brunt-orange:rgba(135, 92, 54, 100%);
+        --teal:rgba(55, 126, 134, 100%);
+
+        --ff-heading: "Outfit", sans-serif;
+        --ff-body: "Fira Sans", sans-serif;
+
+        --fs-300: 0.875rem;
+        --fs-400: 1rem;
+        --fs-500: 1.125rem;
+        --fs-600: 1.25rem;
+        --fs-700: 1.5rem;
+        --fs-800: 2rem;
+        --fs-900: 3.75rem;
+        --fs-1000: 3.75rem;
+
+        --border-radius-1: 0.25rem;
+        --border-radius-2: 0.5rem;
+        --border-radius-3: 0.75rem;
+
+        @media (width > 760px) {
+            --fs-300: 0.875rem;
+            --fs-400: 1rem;
+            --fs-500: 1.25rem;
+            --fs-600: 1.5rem;
+            --fs-700: 2rem;
+            --fs-800: 3rem;
+            --fs-900: 5rem;
+            --fs-1000: 7.5rem;
+        }
+
+        
+    }
+
+    html{
+        font-family: var(--ff-body);
+        line-height: 1.6;
+    }
+
+    body {
+        font-size:var(--fs-500);
+        color:var(--white);
+        background-color:var(--brown-2);
+    }
+
+    h1, h2, h3, h4{
+        font-family:var(--ff-heading);
+        color:var(--white);
+    }
+
+    h1{
+        font-size:var(--fs-1000);
+    }
+
+    a{
+        color:var(--white);
+    }
+
+    a:hover,a:focus-visible{
+        color:var(--gray);
+    }
+}
+
+@layer layout{
+    .wrapper{
+        max-width: 1130px;
+        margin-inline: auto;
+        padding-inline: 1rem;
+        box-sizing: content-box;
+    }
+
+    .wrapper[data-width="narrow"]{
+        max-width: 720px;
+    }
+
+    .wrapper[data-width="wide"]{
+        max-width: 1130px;
+    }
+}
+
+@layer utilities {
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}
+
