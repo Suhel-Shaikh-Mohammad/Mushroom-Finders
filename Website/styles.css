@@ -176,7 +176,7 @@
         }
 
         &[data-gap="large"]{
-            --equal-columns-gap:2rem;
+            --equal-columns-gap:3rem;
         }
 
         &[data-alignment="centered"]{
@@ -272,6 +272,33 @@
         }
     }
 
+    .start-your .wrapper{
+        > p{
+            font-size:var(--fs-600);
+        }
+    }
+
+    .get-to{
+        padding-inline:0;
+    }
+
+    .button {
+        display: inline flex;
+        cursor: pointer;
+        font-family: var(--ff-heading);
+        font-weight: 700;
+        font-size:var(--fs-500);
+        text-decoration: none;
+        background-color:var(--accent);
+        padding: 0.5rem 1rem;
+        border-radius:var(--border-radius-2);
+    }
+
+    .button:hover,
+    .button:focus-visible {
+        background: var(--accent);
+        color: var(--text-high-contrast);
+    }
 }
 
 @layer utilities {
